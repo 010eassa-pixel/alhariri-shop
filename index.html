@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الحريري للملابس</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+direction:rtl;
+background:#f7f7f7;
+}
+
+/* HEADER */
+header{
+background:#111;
+color:#fff;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h1{
+margin:0;
+font-size:20px;
+letter-spacing:2px;
+}
+
+/* HERO */
+.hero{
+background:url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47') center/cover;
+height:350px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.hero h2{
+background:rgba(0,0,0,0.5);
+padding:15px;
+border-radius:10px;
+}
+
+/* SECTION */
+.section{
+padding:30px;
+text-align:center;
+}
+
+.section h3{
+margin-bottom:20px;
+}
+
+/* PRODUCTS */
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.card{
+background:white;
+width:220px;
+padding:10px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.card button{
+margin-top:10px;
+padding:8px;
+border:none;
+background:black;
+color:white;
+cursor:pointer;
+width:100%;
+}
+
+/* FEATURES */
+.features{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.feature{
+background:#fff;
+padding:15px;
+width:200px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.05);
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.products, .features{
+flex-direction:column;
+align-items:center;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>ALHARIRI</h1>
+<span>مصنع الملابس</span>
+</header>
+
+<div class="hero">
+<h2>جودة عالية في صناعة الملابس بأحدث التصميمات</h2>
+</div>
+
+<div class="section">
+<h3>🔥 منتجاتنا</h3>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<h4>تيشيرتات</h4>
+<p>أفضل خامات قطن</p>
+<button>اطلب الآن</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593032465171-8ec6fda3b6d5">
+<h4>ملابس رياضية</h4>
+<p>راحة وأداء عالي</p>
+<button>اطلب الآن</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<h4>ملابس كاجوال</h4>
+<p>ستايل عصري</p>
+<button>اطلب الآن</button>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h3>⭐ مميزاتنا</h3>
+
+<div class="features">
+<div class="feature">✔ جودة عالية</div>
+<div class="feature">✔ أسعار مناسبة</div>
+<div class="feature">✔ شحن سريع</div>
+<div class="feature">✔ تصنيع محلي</div>
+</div>
+</div>
+
+<div class="section">
+<h3>📞 تواصل معنا</h3>
+<p>📱 01000000000</p>
+<p>📍 مصر</p>
+</div>
+
+<footer>
+© 2026 مصنع الحريري - جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
