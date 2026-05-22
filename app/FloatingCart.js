@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export default function FloatingCart() {
   const pathname = usePathname();
   
-  // إخفاء زرار السلة تماماً داخل لوحة التحكم
+  // إخفاء زرار السلة تماماً لو إحنا جوه لوحة التحكم
   const isAdminPage = pathname && pathname.startsWith("/admin");
 
   if (isAdminPage) return null;
@@ -13,17 +13,17 @@ export default function FloatingCart() {
   return (
     <a 
       href="/cart" 
-      className="fixed top-4 left-4 z-50 flex items-center justify-center bg-stone-900/10 backdrop-blur-md hover:bg-stone-950/20 active:scale-95 transition-all duration-200 p-2.5 rounded-xl border border-stone-950/10 shadow-sm"
+      className="fixed top-6 left-6 z-[9999] flex items-center justify-center bg-black text-white hover:bg-zinc-800 active:scale-95 transition-all duration-200 p-3 rounded-full shadow-xl border border-zinc-800"
       aria-label="السلة"
     >
-      {/* أيقونة السلة البسيطة المناسبة للشاشات والموبايل */}
+      {/* أيقونة السلة باللون الأبيض واضحة جداً */}
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
         fill="none" 
         viewBox="0 0 24 24" 
-        strokeWidth="1.5" 
+        strokeWidth="2" 
         stroke="currentColor" 
-        className="w-5 h-5 text-stone-900"
+        className="w-5 h-5"
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
       </svg>
