@@ -7,8 +7,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ar" dir="rtl">
-      <body>
+    <html lang="ar" dir="rtl" style={{ backgroundColor: '#f5ebe0' }}> {/* توحيد لون الخلفية من الجذور */}
+      <body style={{ backgroundColor: '#f5ebe0' }}> {/* ضمان ثبات اللون البيج في كل الصفحات */}
         
         {/* اللوجو الثابت علوياً - تم تحويله إلى absolute لمنع التداخل مع محتوى الصفحات عند السكرول */}
         <a 
@@ -31,9 +31,13 @@ export default function RootLayout({ children }) {
         
         {/* ستايل ذكي يفصل الموبايل عن الكمبيوتر بدون أي كومنتات تسبب أخطاء */}
         <style dangerouslySetInnerHTML={{__html: `
-          /* سطر الأمان لمنع تداخل عناوين الصفحات والأقسام مع اللوجو علوياً */
+          /* سطر الأمان لمنع تداخل عناوين الصفحات والأقسام مع اللوجو علوياً وتثبيت اللون */
+          html, body {
+            background-color: #f5ebe0 !important;
+          }
+
           body {
-            padding-top: 75px !important;
+            padding-top: 95px !important; /* مسافة أمان ممتازة تنزل العناوين تحت اللوجو تماماً */
           }
 
           .responsive-logo {
@@ -50,7 +54,7 @@ export default function RootLayout({ children }) {
           
           @media (max-width: 767px) {
             body {
-              padding-top: 60px !important; /* مسافة أمان مخصصة للموبايل */
+              padding-top: 85px !important; /* مسافة أمان مخصصة للموبايل */
             }
 
             .floating-cart-wrapper {
