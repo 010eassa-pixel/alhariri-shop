@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#f4ece1] font-sans text-[#3d2b1f] flex flex-col">
       
-      {/* 1. الهيدر وزرار الداشبورد - مربوطين بصفحة اللوجن */}
+      {/* 1. الهيدر وزرار الداشبورد - تم حذف الكلمة المكررة مع الحفاظ على التنسيق */}
       <header className="p-6 flex justify-between items-center">
-        <h1 className="text-xl font-bold tracking-widest">WEARIVO</h1>
+        <div></div> {/* مكان فاضي عشان زرار الداشبورد يفضل على الشمال وميتأثرش */}
         <Link href="/login">
           <button className="border border-[#3d2b1f]/20 px-2 py-0.5 text-[10px] opacity-60 hover:opacity-100 transition-all uppercase tracking-widest">
             DASHBOARD
