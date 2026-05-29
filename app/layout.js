@@ -10,11 +10,11 @@ export default function RootLayout({ children }) {
     <html lang="ar" dir="rtl">
       <body>
         
-        {/* اللوجو الثابت في كل الصفحات */}
+        {/* اللوجو الثابت علوياً - تم تحويله إلى absolute لمنع التداخل مع محتوى الصفحات عند السكرول */}
         <a 
           href="/" 
           style={{
-            position: 'fixed',
+            position: 'absolute', /* تحويل ذكي يجعله يختفي مع السكرول الطبيعي ولا يغطي العناوين */
             top: '20px',
             zIndex: 1000,
             fontWeight: 'bold',
