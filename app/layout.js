@@ -10,6 +10,27 @@ export default function RootLayout({ children }) {
     <html lang="ar" dir="rtl">
       <body>
         
+        {/* اللوجو الثابت في كل الصفحات - بنفس حجمه وشكله وبيرجع للرئيسية */}
+        <a 
+          href="/" 
+          style={{
+            position: 'fixed',
+            top: '20px',
+            right: '25px', /* مكانه الثابت فوق على اليمين */
+            zIndex: 1000,
+            fontSize: '32px', 
+            fontWeight: 'bold',
+            fontFamily: 'serif', 
+            color: '#3f2e1e', 
+            textDecoration: 'none',
+            letterSpacing: '2px',
+            textTransform: 'uppercase'
+          }}
+          className="hover:opacity-80 transition-opacity"
+        >
+          WEARIVO
+        </a>
+        
         {/* ستايل ذكي يفصل الموبايل عن الكمبيوتر تماماً ويمسح التداخل */}
         <style dangerouslySetInnerHTML={{__html: `
           /* ستايل الموبايل (الشاشات الصغيرة) */
@@ -46,7 +67,7 @@ export default function RootLayout({ children }) {
             .floating-cart-wrapper {
               position: fixed !important;
               top: 20px !important;
-              right: 280px !important;
+              right: 280px !important; /* متظبطة عشان تنزل جنب كلمة WEARIVO بالظبط */
               left: auto !important;
               bottom: auto !important;
               background: transparent !important;
