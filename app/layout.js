@@ -31,6 +31,11 @@ export default function RootLayout({ children }) {
         
         {/* ستايل ذكي يفصل الموبايل عن الكمبيوتر بدون أي كومنتات تسبب أخطاء */}
         <style dangerouslySetInnerHTML={{__html: `
+          /* سطر الأمان لمنع تداخل عناوين الصفحات والأقسام مع اللوجو علوياً */
+          body {
+            padding-top: 75px !important;
+          }
+
           .responsive-logo {
             right: 25px !important;
             font-size: 20px !important;
@@ -44,6 +49,10 @@ export default function RootLayout({ children }) {
           }
           
           @media (max-width: 767px) {
+            body {
+              padding-top: 60px !important; /* مسافة أمان مخصصة للموبايل */
+            }
+
             .floating-cart-wrapper {
               position: fixed !important; 
               top: auto !important;
