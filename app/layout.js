@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           WEARIVO
         </a>
         
-        {/* الستايل الذكي - متوافق تماماً مع الموبايل والكمبيوتر وبدون كومنتات مسببة للأخطاء */}
+        {/* الستايل الذكي الموحد - يشمل اللوجو، السلة، الكروت، وحركة الـ Loading */}
         <style dangerouslySetInnerHTML={{__html: `
           html, body {
             background-color: #f5ebe0 !important;
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
 
           .product-card {
             background: #ffffff;
-            border-radius: 0px; /* تصميم حاد وعصري مستوحى من براندات الملابس العالمية */
+            border-radius: 0px; 
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -71,7 +71,6 @@ export default function RootLayout({ children }) {
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           }
 
-          /* التأثير الاحترافي عند الـ Hover (ارتفاع مع ظل ناعم عميق) */
           @media (min-width: 768px) {
             .product-card:hover {
               transform: translateY(-8px);
@@ -124,14 +123,53 @@ export default function RootLayout({ children }) {
           .product-btn:hover {
             background: #27272a;
           }
+
+          /* ستايل حركة الثلاث نقط للتحميل */
+          .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            width: 100%;
+          }
+
+          .loading-dots {
+            display: flex;
+            gap: 6px;
+          }
+
+          .loading-dots div {
+            width: 10px;
+            height: 10px;
+            background-color: #3f2e1e; 
+            border-radius: 50%;
+            animation: bounce 0.6s infinite alternate;
+          }
+
+          .loading-dots div:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+
+          .loading-dots div:nth-child(3) {
+            animation-delay: 0.4s;
+          }
+
+          @keyframes bounce {
+            from {
+              transform: translateY(0);
+              opacity: 0.4;
+            }
+            to {
+              transform: translateY(-10px);
+              opacity: 1;
+            }
+          }
           
-          /* تهيئة الأبعاد والتجاوب التام حسب نوع الشاشة */
           @media (max-width: 767px) {
             body {
               padding-top: 85px !important; 
             }
 
-            /* عرض منتجين في الصف الواحد على الموبايل بشكل متناسق ومريح */
             .product-grid {
               grid-template-columns: repeat(2, 1fr) !important;
               gap: 12px;
@@ -174,7 +212,6 @@ export default function RootLayout({ children }) {
           }
           
           @media (min-width: 768px) {
-            /* عرض 4 منتجات في الصف الواحد على الكمبيوتر والشاشات الكبيرة */
             .product-grid {
               grid-template-columns: repeat(4, 1fr) !important;
               gap: 24px;
