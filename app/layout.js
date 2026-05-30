@@ -7,14 +7,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ar" dir="rtl" style={{ backgroundColor: '#f5ebe0' }}> {/* توحيد لون الخلفية من الجذور */}
-      <body style={{ backgroundColor: '#f5ebe0' }}> {/* ضمان ثبات اللون البيج في كل الصفحات */}
+    <html lang="ar" dir="rtl" style={{ backgroundColor: '#f5ebe0' }}>
+      <body style={{ backgroundColor: '#f5ebe0' }}>
         
-        {/* اللوجو الثابت علوياً - تم تحويله إلى absolute لمنع التداخل مع محتوى الصفحات عند السكرول */}
+        {/* اللوجو الثابت علوياً */}
         <a 
           href="/" 
           style={{
-            position: 'absolute', /* تحويل ذكي يجعله يختفي مع السكرول الطبيعي ولا يغطي العناوين */
+            position: 'absolute', 
             top: '20px',
             zIndex: 1000,
             fontWeight: 'bold',
@@ -29,15 +29,14 @@ export default function RootLayout({ children }) {
           WEARIVO
         </a>
         
-        {/* ستايل ذكي يفصل الموبايل عن الكمبيوتر بدون أي كومنتات تسبب أخطاء */}
+        {/* الستايل الذكي - متوافق تماماً مع الموبايل والكمبيوتر وبدون كومنتات مسببة للأخطاء */}
         <style dangerouslySetInnerHTML={{__html: `
-          /* سطر الأمان لمنع تداخل عناوين الصفحات والأقسام مع اللوجو علوياً وتثبيت اللون */
           html, body {
             background-color: #f5ebe0 !important;
           }
 
           body {
-            padding-top: 95px !important; /* مسافة أمان ممتازة تنزل العناوين تحت اللوجو تماماً */
+            padding-top: 95px !important; 
           }
 
           .responsive-logo {
@@ -51,10 +50,108 @@ export default function RootLayout({ children }) {
             left: 75px;
             z-index: 999;
           }
+
+          /* ستايل كروت المنتجات التلقائي والاحترافي */
+          .product-grid {
+            display: grid;
+            gap: 20px;
+            padding: 20px;
+          }
+
+          .product-card {
+            background: #ffffff;
+            border-radius: 0px; /* تصميم حاد وعصري مستوحى من براندات الملابس العالمية */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          }
+
+          /* التأثير الاحترافي عند الـ Hover (ارتفاع مع ظل ناعم عميق) */
+          @media (min-width: 768px) {
+            .product-card:hover {
+              transform: translateY(-8px);
+              box-shadow: 0 12px 24px rgba(63, 46, 30, 0.08);
+            }
+          }
+
+          .product-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+          }
+
+          .product-card:hover img {
+            transform: scale(1.02);
+          }
+
+          .product-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #18181b;
+            margin: 14px 10px 6px 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+
+          .product-price {
+            font-size: 14px;
+            font-weight: 500;
+            color: #71717a;
+            margin: 0 10px 14px 10px;
+          }
+
+          .product-btn {
+            background: #18181b;
+            color: #ffffff !important;
+            padding: 10px 24px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 0px;
+            text-decoration: none;
+            transition: background 0.2s, opacity 0.2s;
+            margin-top: auto;
+            width: calc(100% - 30px);
+            text-transform: uppercase;
+          }
+
+          .product-btn:hover {
+            background: #27272a;
+          }
           
+          /* تهيئة الأبعاد والتجاوب التام حسب نوع الشاشة */
           @media (max-width: 767px) {
             body {
-              padding-top: 85px !important; /* مسافة أمان مخصصة للموبايل */
+              padding-top: 85px !important; 
+            }
+
+            /* عرض منتجين في الصف الواحد على الموبايل بشكل متناسق ومريح */
+            .product-grid {
+              grid-template-columns: repeat(2, 1fr) !important;
+              gap: 12px;
+              padding: 12px;
+            }
+
+            .product-title {
+              font-size: 13px;
+              margin: 10px 5px 4px 5px;
+            }
+
+            .product-price {
+              font-size: 12px;
+              margin: 0 5px 10px 5px;
+            }
+
+            .product-btn {
+              padding: 8px 12px;
+              font-size: 11px;
+              width: calc(100% - 16px);
             }
 
             .floating-cart-wrapper {
@@ -77,6 +174,13 @@ export default function RootLayout({ children }) {
           }
           
           @media (min-width: 768px) {
+            /* عرض 4 منتجات في الصف الواحد على الكمبيوتر والشاشات الكبيرة */
+            .product-grid {
+              grid-template-columns: repeat(4, 1fr) !important;
+              gap: 24px;
+              padding: 40px;
+            }
+
             .responsive-logo {
               right: 40px !important;
               font-size: 32px !important;
