@@ -36,8 +36,16 @@ export default function CategoryClient({ categoryId }) {
         </h1>
       </header>
 
-      {/* التعديل السحري هنا: الرسالة مش هتظهر إلا لو التحميل خلص تماماً والمصفوفة فعلاً فاضية */}
-      {!loading && products.length === 0 ? (
+      {/* شرط التحميل السحري: طول ما الصفحة بتجيب البيانات بيظهر الثلاث نقط */}
+      {loading ? (
+        <div className="loader-container">
+          <div className="loading-dots">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      ) : products.length === 0 ? (
         <p style={{ textAlign: 'center', color: '#999' }}>لا توجد قطع متوفرة في هذا القسم حالياً.</p>
       ) : (
         <div style={{ 
